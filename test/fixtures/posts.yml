@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  position: MyString
+  breifHistory: MyText
+  education: MyText
+  achievments: MyText
+  goals: MyText
+
+two:
+  position: MyString
+  breifHistory: MyText
+  education: MyText
+  achievments: MyText
+  goals: MyText
