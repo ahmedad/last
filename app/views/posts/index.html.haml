@@ -1,15 +1,37 @@
-- @post.each do |post|
-	=link_to (image_tag post.image.url(:small)), post
-	%h2= link_to post.position, post
-	%p
-		= post.comments.count
-		Comment
-	%p
-		= post.get_likes.size
-		Upvotes
-	%p
-		= post.get_dislikes.size
-		Downvote
+- if user_signed_in?
+	%p#intro
+		Hello
+		= current_user.name
+		%br /
+		%span
+			Tell us what you think about this candidates!
+- else
+	%p#intro
+		Sign up and share your opinion
+		%br
+		%span
+			Tell us what you think about this candidates!
+#posts
+	- @post.each do |post|
+		.post
+			.post_image
+				=link_to (image_tag post.image.url(:small)), post
+			.post_content
+				.title
+					%h2= link_to post.position, post
+				.data.clearfix
+					%p.username
+						Posted by 
+						= post.user.name
+					%p.buttons
+						%span
+							%i.fa.fa-comments-o
+							= post.comments.count
+						%span
+							%i.fa.fa-thumbs-o-up
+							= post.get_likes.size
+						%span
+							%i.fa.fa-thumbs-o-down
+							= post.get_dislikes.size
 
-
-= link_to 'Add new', new_post_path
+	
