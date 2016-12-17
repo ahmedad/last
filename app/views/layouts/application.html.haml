@@ -1,0 +1,26 @@
+!!!
+%html
+%head
+  %title Your | Choice
+  = csrf_meta_tags
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %link{:rel => "stylesheet", :href => "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"}
+  %link{:rel => "stylesheet", :href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"}
+
+%body
+  %header
+    .wrapper.clearfix
+      #logo=link_to "Future Choice", root_path
+      %nav
+        - if user_signed_in?
+          =link_to current_user.name, edit_user_registration_path
+        - else
+          =link_to "Sign In", new_user_session_path
+          =link_to "Sign Up", new_user_registration_path, class: 'button'
+  %p.notice= notice
+  %p.alert= alert
+
+  = yield
+
+

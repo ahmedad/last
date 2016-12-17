@@ -1,5 +1,15 @@
 - @post.each do |post|
 	=link_to (image_tag post.image.url(:small)), post
 	%h2= link_to post.position, post
+	%p
+		= post.comments.count
+		Comment
+	%p
+		= post.get_likes.size
+		Upvotes
+	%p
+		= post.get_dislikes.size
+		Downvote
+
 
 = link_to 'Add new', new_post_path
