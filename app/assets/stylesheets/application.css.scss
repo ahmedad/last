@@ -1,6 +1,22 @@
 /*
  *= require_self
+ *= require social-share-button
+ *= require 'masonry/basic'
+ *= require 'masonry/centered'
+ *= require 'masonry/fluid'
+ *= require 'masonry/gutters'
+ *= require 'masonry/infinitescroll'
+ *= require 'masonry/right-to-left'
+ *= require 'masonry/transitions'
  */
+
+ .social-share-button {
+  .ssb-icon {
+    background-size: 2rem, 2rem ;
+    height: 2rem;
+    width: 2rem;
+  }
+}
 
 body {
 	font-family: "Proxima Nova";
@@ -65,3 +81,4 @@ header {
 
 @import 'home.css.scss';
 @import 'posts.css.scss';
+@import "social-share-button";
