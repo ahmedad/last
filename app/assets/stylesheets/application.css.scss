@@ -1,24 +1,26 @@
 /*
  *= require_self
  *= require social-share-button
- *= require 'masonry/basic'
- *= require 'masonry/centered'
- *= require 'masonry/fluid'
- *= require 'masonry/gutters'
- *= require 'masonry/infinitescroll'
- *= require 'masonry/right-to-left'
- *= require 'masonry/transitions'
  */
 
- .social-share-button {
-  .ssb-icon {
-    background-size: 2rem, 2rem ;
-    height: 2rem;
-    width: 2rem;
-  }
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}  
+}
+/* Tabled Portrait */
+@media screen and (max-width: 768px) {
+    #primary { width:100%; }
+    #secondary { width:100%; margin:0; border:none; }
 }
 
-body {
+@media (min-width: 640px) { body {font-size:1rem;} } 
+@media (min-width:960px) { body {font-size:1.2rem;} } 
+@media (min-width:1100px) { body {font-size:1.5rem;} }
+
+img { max-width: 100%; }
+
+ body {
 	font-family: "Proxima Nova";
 	font-weight: 100;
 }
@@ -48,6 +50,8 @@ h1, h2, h3, h4, h5, h6 {
 	outline: none;
 	background: white;
 	color: #9B9B9B;
+	font-size: 2rem;
+    font-weight: 500;
 }
 
 header {
@@ -60,6 +64,8 @@ header {
 		a {
 			color: #333233;
 			text-decoration: none;
+			font-size: 2.5rem;
+  			font-weight: 500;
 			&:hover {
 				color: #50A7C7;
 			}
@@ -78,7 +84,23 @@ header {
 		}
 	}
 }
+.panel-heading {
+	padding: 0;
+}
 
-@import 'home.css.scss';
-@import 'posts.css.scss';
+.panel-body {
+	padding: 35px;
+	h1 {
+		margin: 0 0 10px 0;
+	}
+}
+
+.panel-footer {
+	padding: 20px 35px;
+	
+}
+@import 'home.scss';
+@import 'posts.scss';
 @import "social-share-button";
+@import "bootstrap-sprockets";
+@import "bootstrap";

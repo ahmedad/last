@@ -1,4 +1,6 @@
 = simple_form_for @post do |f|
+	=f.collection_select :category_id, Category.all, :id, :name, {promt: 'choose a county'}
+	=f.collection_select :position_id, Position.all, :id, :name, {promt: 'choose a county'}
 	=f.input :image
 	=f.input :position
 	=f.input :breifHistory
