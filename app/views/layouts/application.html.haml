@@ -24,10 +24,6 @@
             %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
               - Category.all.each do |category|
                 %li= link_to category.name, posts_path(category: category.name)
-        %ul.nav.navbar-nav.navbar-right
-          .dropdown
-            %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"} By position
-            / %span.caret
             
       - else
         %ul.nav.navbar-nav.navbar-right 
