@@ -17,6 +17,7 @@ gem 'paperclip', '~> 5.1'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'social-share-button', '~> 0.8.7'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'searchkick', '~> 1.5'
 
 
 group :development, :test do

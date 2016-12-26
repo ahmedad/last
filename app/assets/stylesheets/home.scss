@@ -9,6 +9,41 @@
     	color: darkmagenta;
 	}
 }
+.container {
+	.navbar-right {
+		float: right !important;
+	    margin-right: -15px;
+	    margin-bottom: 1rem;
+	    padding-top: 2rem;
+	}
+	.navbar-nav > li > a {
+		padding-top: 7px;
+		padding-bottom: 5px;
+  	}
+
+  	.btn-default {
+  		color: #333;
+		background-color: #fff;
+		border-color: #ccc;
+		margin-left: 1rem;
+  	}
+	.navbar-brand {
+		margin-left: -18px;
+	    font-size: 3rem;
+	    padding-top: 2.3rem;
+	    font-weight: 500;
+	}
+
+	.navbar-form {
+		padding-top: 0;
+		margin-top: 0;
+	}
+
+}
+
+
+
+
 #posts {
 	.post {
 		background: #F8F9FA;

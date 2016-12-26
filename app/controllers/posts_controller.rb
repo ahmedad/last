@@ -3,13 +3,22 @@ class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 	before_action :authenticate_user!, except: [:show, :index]
 
+	def search
+		if params[:search].present?
+			@post = Post.search(params[:search])
+		else
+			@post = Post.all
+		end
+	end
 
 	def index
-		@post = Post.all.order("created_at DESC")
+		@posts = Post.all.order("created_at DESC")
 	end
 
 	def show
 		@comments = Comment.where(post_id: @post)
+		@random_post = Post.where.not(id: @post).order("RANDOM()").first
+
 	end
 
 	def new
@@ -27,7 +36,6 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-		
 	end
 
 	def update
@@ -49,7 +57,7 @@ class PostsController < ApplicationController
 	end
 
 	def downvote
-		@post.downvote_by current_user
+		@post.downvote_from current_user
 		redirect_to :back
 	end
 
@@ -60,6 +68,6 @@ class PostsController < ApplicationController
 	end
 
 	def post_params
-		params.require(:post).permit(:position, :breifHistory, :education, :achievments, :goals, :image)
+		params.require(:post).permit(:title, :link, :description, :image)
 	end
 end

@@ -15,28 +15,48 @@
         = link_to "Future choice", root_path 
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-right
-          %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+          %li= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-default'
+          %li= link_to "New Post", new_post_path, class: 'btn btn-default'
+          = form_tag posts_path, method: :get, class: "navbar-form navbar-right", role: "search" do
+            %p
+              = text_field_tag :search, params[:search], class: "form-control"
+              = submit_tag "Search", name: nil, class: "btn btn-default"
         %ul.nav.navbar-nav.navbar-right
           .dropdown
             %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"} Check your county
-            %span.caret
-            %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
-              - Category.all.each do |category|
-                %li= link_to category.name, posts_path(category: category.name)
-      - else
-        %ul.nav.navbar-nav.navbar-right 
-          %li= link_to "Sign In", new_user_session_path, class: 'button'
-        %ul.nav.navbar-nav.navbar-right
-          .dropdown
-            %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"} Check your county
-            %span.caret
+            / %span.caret
             %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
               - Category.all.each do |category|
                 %li= link_to category.name, posts_path(category: category.name)
         %ul.nav.navbar-nav.navbar-right
           .dropdown
             %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"} By position
-            %span.caret
+            / %span.caret
+            %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
+              - Seat.all.each do |seat|
+                %li= link_to seat.name, posts_path(seat: seat.name)
+      - else
+        %ul.nav.navbar-nav.navbar-right 
+          %li= link_to "Sign In", new_user_session_path, class: 'btn btn-default'
+          %li= link_to "Sign Up", new_user_registration_path, class: 'btn btn-default'
+          %li= link_to "About us", about_index_path, class: 'btn btn-default'
+          = form_tag posts_path, method: :get, class: "navbar-form navbar-right", role: "search" do
+            %p
+              = text_field_tag :search, params[:search], class: "form-control"
+              = submit_tag "Search", name: nil, class: "btn btn-default"
+
+
+        %ul.nav.navbar-nav.navbar-right
+          .dropdown
+            %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"} Check your county
+            / %span.caret
+            %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
+              - Category.all.each do |category|
+                %li= link_to category.name, posts_path(category: category.name)
+        %ul.nav.navbar-nav.navbar-right
+          .dropdown
+            %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"} By position
+            / %span.caret
             %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
               - Seat.all.each do |seat|
                 %li= link_to seat.name, posts_path(seat: seat.name)
