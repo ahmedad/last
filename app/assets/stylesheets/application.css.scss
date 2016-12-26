@@ -3,26 +3,14 @@
  *= require social-share-button
  */
 
-/* Tablet Landscape */
-@media screen and (max-width: 1060px) {
-    #primary { width:67%; }
-    #secondary { width:30%; margin-left:3%;}  
-}
-/* Tabled Portrait */
-@media screen and (max-width: 768px) {
-    #primary { width:100%; }
-    #secondary { width:100%; margin:0; border:none; }
-}
-
-@media (min-width: 640px) { body {font-size:1rem;} } 
-@media (min-width:960px) { body {font-size:1.2rem;} } 
-@media (min-width:1100px) { body {font-size:1.5rem;} }
-
-img { max-width: 100%; }
-
  body {
 	font-family: "Proxima Nova";
 	font-weight: 100;
+}
+@media (min-width: 768px) {
+	.container {
+		width: 97%;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {

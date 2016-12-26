@@ -8,13 +8,13 @@
 	.clearfix
 		.post_image_description
 			= image_tag @post.image.url(:medium)
-			%h2 BREIF HISTORY
+			%h4 BREIF HISTORY
 			.description= simple_format(@post.breifHistory)
-			%h2 EDUCATION
+			%h4 EDUCATION
 			.description= simple_format(@post.education)
-			%h2 POLITICAL ACHIEVEMENTS
+			%h4 POLITICAL ACHIEVEMENTS
 			.description= simple_format(@post.achievments)
-			%h2 FUTURE GOALS
+			%h4 FUTURE GOALS
 			.description= simple_format(@post.goals)
 		.post_data
 			=link_to  "Go home", root_path, class: 'button'
