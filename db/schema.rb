@@ -28,12 +28,6 @@ ActiveRecord::Schema.define(version: 20161226005616) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "positions", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string   "position"
     t.text     "breifHistory"
@@ -48,14 +42,7 @@ ActiveRecord::Schema.define(version: 20161226005616) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "category_id"
-    t.integer  "seat_id"
     t.string   "name"
-  end
-
-  create_table "seats", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

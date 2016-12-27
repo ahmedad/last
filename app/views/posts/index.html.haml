@@ -13,7 +13,7 @@
 		.row
 			.col-md-4.col-md-offset-4{:style => "padding-left: 2rem;"}
 				%h3{:style => "margin-top: 0; font-size: 2.3rem;"} Search Candidate's name
-				= form_tag posts_path, method: :get, class: "navbar-form", role: "search" do
+				= form_tag search_posts_path, method: :get, class: "navbar-form", role: "search" do
 					%p
 						= text_field_tag :search, params[:search], class: "form-control"
 						= submit_tag "Search", name: nil, class: "btn btn-default"
@@ -27,7 +27,7 @@
 		.row
 			.col-md-4.col-md-offset-4{:style => "padding-left: 2rem;"}
 				%h3{:style => "margin-top: 0; font-size: 2.3rem;"} Search Candidate's name
-				= form_tag posts_path, method: :get, class: "navbar-form", role: "search" do
+				= form_tag search_posts_path, method: :get, class: "navbar-form", role: "search" do
 					%p
 						= text_field_tag :search, params[:search], class: "form-control"
 						= submit_tag "Search", name: nil, class: "btn btn-default"
