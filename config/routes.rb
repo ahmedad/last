@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users, controllers: { confirmations: 'confirmations' }
   resources :about
   get 'about' => 'about#index'
   resources :posts do
