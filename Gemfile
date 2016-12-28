@@ -18,6 +18,8 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'social-share-button', '~> 0.8.7'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'searchkick', '~> 1.5'
+gem 'rails_admin', '~> 1.1', '>= 1.1.1'
+gem 'elastic_email_rails', '~> 0.1.0'
 
 
 group :development, :test do
