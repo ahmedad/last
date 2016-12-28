@@ -20,6 +20,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'searchkick', '~> 1.5'
 gem 'rails_admin', '~> 1.1', '>= 1.1.1'
 gem 'elastic_email_rails', '~> 0.1.0'
+gem 'listen', '~> 3.0.5'
 
 
 group :development, :test do
@@ -28,7 +29,6 @@ end
 
 group :development do
   gem 'web-console'
-  gem 'listen', '~> 3.0.5'
   gem 'capistrano-rails'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
