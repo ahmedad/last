@@ -23,6 +23,7 @@ gem 'elastic_email_rails', '~> 0.1.0'
 gem 'listen', '~> 3.0.5'
 
 
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
