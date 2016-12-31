@@ -20,6 +20,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'searchkick', '~> 1.5'
 gem 'elastic_email_rails', '~> 0.1.0'
 gem 'listen', '~> 3.0.5'
+gem 'lograge', '~> 0.4.1'
 
 
 
