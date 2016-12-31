@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   		get "dislike", to: "posts#downvote"
   	end
 
-    # post 'post/search' => 'posts#search', as: 'search_posts'
-
     collection do
       get 'search'
     end
