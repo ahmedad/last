@@ -7,9 +7,18 @@ class PostsController < ApplicationController
 		if params[:search].present?
 			@post = Post.search(params[:search])
 		else
-			@post = Post.all
+			@posts = Post.all.order("created_at DESC")
 		end
 	end
+
+	# def search
+	# 	debugger
+	# 	@q = "%#{params[:query]}%"
+	# 	@posts = Post.where("name LIKE ? or description LIKE ? or short description LIKE ?", @q, @q, @q )
+	# 	@category = Category.joins(:posts).where(:posts => {:id => @posts.map{|x| x.id }})
+	# 	@npos = Npo.all
+	# 	render 'search_posts_path'
+	# end
 
 	def index
 

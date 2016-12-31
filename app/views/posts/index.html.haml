@@ -1,58 +1,57 @@
 - if user_signed_in?
-	%p#intro
-		/ = form_tag posts_path, method: :get, class: "navbar-form navbar-right", role: "search" do
-		/ 	%p
-		/ 		= text_field_tag :search, params[:search], class: "form-control"
-		/ 		= submit_tag "Search", name: nil, class: "btn btn-default"
-		Hello
-		= current_user.name
-		%br
-		%span
-			Tell us what you think about this candidates!
-	#intro
-		.row
-			.col-md-4.col-md-offset-4{:style => "padding-left: 2rem;"}
-				%h3{:style => "margin-top: 0; font-size: 2.3rem;"} Search Candidate's name
-				= form_tag search_posts_path, method: :get, class: "navbar-form", role: "search" do
-					%p
-						= text_field_tag :search, params[:search], class: "form-control"
-						= submit_tag "Search", name: nil, class: "btn btn-default"
+    %p#intro 
+        Hello
+        = current_user.name
+        %br
+        %span
+            Tell us what you think about this candidates!
+    #intro
+        .row
+            .col-md-4.col-md-offset-4{:style => "padding-left: 2rem;"}
+                %h3{:style => "margin-top: 0; font-size: 2.3rem;"} Search Candidate's name
+                = form_tag search_posts_path do
+                    %input#searchbar.form-control{:autocomplete => "off", :name => "query", :type => "text"}/
+
+                / = form_tag search_posts_path, method: :get, class: "navbar-form", role: "search" do
+                /   %p
+                /       = text_field_tag :search, params[:search], class: "form-control"
+                /       = submit_tag "Search", name: nil, class: "btn btn-default"
 - else
-	%p#intro
-		Sign up and share your opinion
-		%br
-		%span
-			Tell us what you think about this candidates!
-	#intro
-		.row
-			.col-md-4.col-md-offset-4{:style => "padding-left: 2rem;"}
-				%h3{:style => "margin-top: 0; font-size: 2.3rem;"} Search Candidate's name
-				= form_tag search_posts_path, method: :get, class: "navbar-form", role: "search" do
-					%p
-						= text_field_tag :search, params[:search], class: "form-control"
-						= submit_tag "Search", name: nil, class: "btn btn-default"
+    %p#intro
+        Sign up and share your opinion
+        %br
+        %span
+            Tell us what you think about this candidates!
+    #intro
+        .row
+            .col-md-4.col-md-offset-4{:style => "padding-left: 2rem;"}
+                %h3{:style => "margin-top: 0; font-size: 2.3rem;"} Search Candidate's name
+                = form_tag search_posts_path, method: :get, class: "navbar-form", role: "search" do
+                    %p
+                        = text_field_tag :search, params[:search], class: "form-control"
+                        = submit_tag "Search", name: nil, class: "btn btn-default"
 
 #posts
-	- @posts.each do |post|
-		.post
-			.post_image{:style => "height: 23rem;"}
-				= link_to (image_tag post.image.url(:small)), post
-			.post_content
-				.title
-					%h2= post.name
-				.data.clearfix
-					%p.username
-						Running for
-						= post.position
-					%p.buttons
-						%span
-							%i.fa.fa-comments-o
-							= post.comments.count
-						%span
-							%i.fa.fa-thumbs-o-up
-							= post.get_likes.size
-						%span
-							%i.fa.fa-thumbs-o-down
-							= post.get_dislikes.size
+    - @posts.each do |post|
+        .post
+            .post_image{:style => "height: 23rem;"}
+                = link_to (image_tag post.image.url(:small)), post
+            .post_content
+                .title
+                    %h2= post.name
+                .data.clearfix
+                    %p.username
+                        Running for
+                        = post.position
+                    %p.buttons
+                        %span
+                            %i.fa.fa-comments-o
+                            = post.comments.count
+                        %span
+                            %i.fa.fa-thumbs-o-up
+                            = post.get_likes.size
+                        %span
+                            %i.fa.fa-thumbs-o-down
+                            = post.get_dislikes.size
 
-	
+    
