@@ -17,10 +17,10 @@ gem 'paperclip', '~> 5.1'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'social-share-button', '~> 0.8.7'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
-gem 'searchkick', '~> 1.5'
 gem 'elastic_email_rails', '~> 0.1.0'
 gem 'listen', '~> 3.0.5'
-gem 'lograge', '~> 0.4.1'
+gem 'scoped_search', '~> 4.0'
+
 
 
 

@@ -28,7 +28,7 @@
 						= text_field_tag :search, params[:search], class: "form-control"
 						= submit_tag "Search", name: nil, class: "btn btn-default"
 #posts
-	- @post.each do |post|
+	- @posts.each do |post|
 		.post
 			.post_image
 				=link_to (image_tag post.image.url(:small)), post

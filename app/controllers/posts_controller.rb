@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
 	def search
 		if params[:search].present?
-			@post = Post.search(params[:search])
+			@posts = Post.search_for(params[:search])
 		else
 			@posts = Post.all.order("created_at DESC")
 		end
