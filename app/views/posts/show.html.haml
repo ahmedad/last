@@ -1,10 +1,9 @@
 #post_show
 	%h1= @post.position
 	%p.username
-		Post by
-		= @post.user.name
-		about
+		Posted in about 
 		= time_ago_in_words(@post.created_at)
+		ago
 	.clearfix
 		.post_image_description
 			= image_tag @post.image.url(:medium)

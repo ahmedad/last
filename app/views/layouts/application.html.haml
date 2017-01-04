@@ -10,7 +10,7 @@
 
 %body
   %nav.navbar.navbar-default
-    .container
+    .container{:style => "width: 90%;"}
       .navbar-brand
         = link_to "Future choice", root_path 
       - if user_signed_in?
