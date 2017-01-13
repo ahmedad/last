@@ -41,9 +41,7 @@
             %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
               - Category.all.each do |category|
                 %li= link_to category.name, posts_path(category: category.name)
-  %p.notice= notice
-  %p.alert= alert
+  %p= notice
+  %p= alert
   .wrapper
     = yield
-
-

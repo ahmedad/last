@@ -12,8 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require masonry/jquery.masonry
+//= require masonry/modernizr-transitions
+//= require masonry/jquery.imagesloaded.min
 //= require_tree .
 //= require social-share-button
 //= require bootstrap-sprockets
 
+$(function() {
+  return $('#posts').imagesLoaded(function() {
+    return $('#pins').masonry({
+      itemSelector: '.box',
+      isFitWidth: true
+    });
+  });
+});
 

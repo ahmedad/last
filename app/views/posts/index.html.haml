@@ -1,54 +1,90 @@
+%section.home
+	.bs-carousel
+		#my-carousel.carousel.slide{"data-ride" => "carousel"}
+			.carousel-inner{:role => "listbox"}
+				.item.active
+					.container
+						.row
+							.col-md-7.col-md-offset-5
+								%h1
+									You can interact with all the candidates of 2017 election, sign up 
+								%div
+									= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'
+				.item
+					.container
+						.row
+							.col-md-7.col-md-offset-5
+								%h1
+									You can read, comment, upvote or downvote and share a profile on socail media
+								%div
+									= link_to "About us", about_index_path, class: 'btn btn-primary'
+				.item
+					.container
+						.row
+							.col-md-7.col-md-offset-5
+								%h1
+									Search candidates by their county or by their name, so sign up 
+								%div
+									= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'
+				.item
+					.container
+						.row
+							.col-md-7.col-md-offset-5
+								%h1
+									You can sign up for free and for  candidates please share with us your profile
+								%div
+									= link_to "About us", about_index_path, class: 'btn btn-primary'
 - if user_signed_in?
-    %p#intro 
-        Hello
-        = current_user.name
-        %br
-        %span
-            Tell us what you think about this candidates!
-    #intro
-        .row
-            .col-md-4.col-md-offset-4{:style => "padding-left: 2rem;"}
-                %h3{:style => "margin-top: 0; font-size: 2.3rem;"} Search Candidate's name
-                = form_tag search_posts_path, method: :get, class: "navbar-form", role: "search" do
-                    %p
-                        = text_field_tag :search, params[:search], class: "form-control"
-                        = submit_tag "Search", name: nil, class: "btn btn-default"
+	%p#intro 
+		Hello
+		= current_user.name
+		%br
+		%span
+			To upload your profile email us "arteppal@gmail.com"!
+	#intro
+		.row
+			.col-md-4.col-md-offset-4{:style => "padding-left: 2rem;"}
+				%h3{:style => "margin-top: 0; font-size: 2.3rem;"} Search Candidate's name
+				= form_tag search_posts_path, method: :get, class: "navbar-form", role: "search" do
+					%p
+						= text_field_tag :search, params[:search], class: "form-control"
+						= submit_tag "Search", name: nil, class: "btn btn-default"
 - else
-    %p#intro
-        Sign up and share your opinion
-        %br
-        %span
-            Tell us what you think about this candidates!
-    #intro
-        .row
-            .col-md-4.col-md-offset-4{:style => "padding-left: 2rem;"}
-                %h3{:style => "margin-top: 0; font-size: 2.3rem;"} Search Candidate's name
-                = form_tag search_posts_path, method: :get, class: "navbar-form", role: "search" do
-                    %p
-                        = text_field_tag :search, params[:search], class: "form-control"
-                        = submit_tag "Search", name: nil, class: "btn btn-default"
+	%p#intro
+		Sign up and share your opinion
+		%br
+		%span
+			To upload your profile email us "arteppal@gmail.com"!
+	#intro
+		.row
+			.col-md-4.col-md-offset-4{:style => "padding-left: 2rem;"}
+				%h3{:style => "margin-top: 0; font-size: 2.3rem;"} Search Candidate's name
+				= form_tag search_posts_path, method: :get, class: "navbar-form", role: "search" do
+					%p
+						= text_field_tag :search, params[:search], class: "form-control"
+						= submit_tag "Search", name: nil, class: "btn btn-default"
 
-#posts
-    - @posts.each do |post|
-        .post
-            .post_image{:style => "height: 23rem;"}
-                = link_to (image_tag post.image.url(:small)), post
-            .post_content
-                .title
-                    %h2= post.name
-                .data.clearfix
-                    %p.username
-                        Running for
-                        = post.position
-                    %p.buttons
-                        %span
-                            %i.fa.fa-comments-o
-                            = post.comments.count
-                        %span
-                            %i.fa.fa-thumbs-o-up
-                            = post.get_likes.size
-                        %span
-                            %i.fa.fa-thumbs-o-down
-                            = post.get_dislikes.size
+#posts.transitions-enabled.infinite-scroll.clearfix
+	- @posts.each do |post|
+		.post
+			.post_image{:style => "height: 23rem;"}
+				= link_to (image_tag post.image.url(:small)), post
+			.post_content
+				.title
+					%h2= post.name
+				.data.clearfix
+					%p.username
+						Running for
+						= post.position
+					%p.buttons
+						%span
+							%i.fa.fa-comments-o
+							= post.comments.count
+						%span
+							%i.fa.fa-thumbs-o-up
+							= post.get_likes.size
+						%span
+							%i.fa.fa-thumbs-o-down
+							= post.get_dislikes.size
 
-    
+	
