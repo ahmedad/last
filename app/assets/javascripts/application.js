@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require masonry/jquery.masonry
+//= require masonry/modernizr-transitions
+//= require masonry/jquery.imagesloaded.min
 //= require_tree .
 //= require social-share-button
 //= require bootstrap-sprockets
@@ -30,3 +33,5 @@ $('.nav-carousel').bind({
 		top: $('#thumbCarousel').height()-$('.nav-carousel').height()
 	}
 });
+
+
