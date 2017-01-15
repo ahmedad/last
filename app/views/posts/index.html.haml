@@ -45,42 +45,7 @@
 				%a.right.carousel-control{"data-slide" => "next", :href => "#carousel-example-generic"}
 					%span.icon-next
 
-/ %section.home
-/ 	.bs-carousel
-/ 		#my-carousel.carousel.slide{"data-ride" => "carousel"}
-/ 			.carousel-inner{:role => "listbox"}
-/ 				.item.active
-/ 					.container
-/ 						.row
-/ 							.col-md-7.col-md-offset-5
-/ 								%h1
-/ 									You can interact with all the candidates of 2017 election, sign up 
-/ 								%div
-/ 									= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'
-/ 				.item
-/ 					.container
-/ 						.row
-/ 							.col-md-7.col-md-offset-5
-/ 								%h1
-/ 									You can read, comment, upvote or downvote and share a profile on socail media
-/ 								%div
-/ 									= link_to "About us", about_index_path, class: 'btn btn-primary'
-/ 				.item
-/ 					.container
-/ 						.row
-/ 							.col-md-7.col-md-offset-5
-/ 								%h1
-/ 									Search candidates by their county or by their name, so sign up 
-/ 								%div
-/ 									= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'
-/ 				.item
-/ 					.container
-/ 						.row
-/ 							.col-md-7.col-md-offset-5
-/ 								%h1
-/ 									You can sign up for free and for  candidates please share with us your profile
-/ 								%div
-/ 									= link_to "About us", about_index_path, class: 'btn btn-primary'
+
 - if user_signed_in?
 	%p#intro 
 		Hello
