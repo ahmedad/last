@@ -75,10 +75,11 @@
 					%p
 						= text_field_tag :search, params[:search], class: "form-control"
 						= submit_tag "Search", name: nil, class: "btn btn-default"
-
+- Seat.all.each do |seat|
+	= link_to seat.name, posts_path(seat: seat.name)
 #posts.transitions-enabled.infinite-scroll.clearfix
 	- @posts.each do |post|
-		.post
+		.box.post
 			.post_image{:style => "height: 23rem;"}
 				= link_to (image_tag post.image.url(:small)), post
 			.post_content

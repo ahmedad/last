@@ -6,6 +6,8 @@
 			.panel-body
 			= simple_form_for @post do |f|
 				.form-group
+					=f.collection_select :seat_id, Seat.all, :id, :name, {promt: 'Seat running for'}, input_html: { class: 'form-control' }
+				.form-group
 					=f.collection_select :category_id, Category.all, :id, :name, {promt: 'County running for'}, input_html: { class: 'form-control' }
 				.form-group
 					=f.input :image, input_html: { class: 'form-control' }
