@@ -75,8 +75,12 @@
 					%p
 						= text_field_tag :search, params[:search], class: "form-control"
 						= submit_tag "Search", name: nil, class: "btn btn-default"
-- Seat.all.each do |seat|
-	= link_to seat.name, posts_path(seat: seat.name)
+/ %nav.navbar.navbar-default
+.container
+	%ul.nav.navbar-nav
+		%li= link_to "All", root_path
+		- Seat.all.each do |seat|
+			%li= link_to seat.name, posts_path(seat: seat.name)
 #posts.transitions-enabled.infinite-scroll.clearfix
 	- @posts.each do |post|
 		.box.post

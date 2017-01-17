@@ -10,6 +10,15 @@
 	}
 }
 .container {
+
+	.nav > li {
+		position: relative;
+		display: block;
+		font-size: 2rem;
+		font-weight: 500;
+		margin-top: 0.8rem;
+	}
+
 	.navbar-right {
 		float: right !important;
 	    margin-right: -15px;

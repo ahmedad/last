@@ -20,13 +20,13 @@
           - if current_user.admin?
             %li= link_to "New Post", new_post_path, class: 'btn btn-default'
           
-        %ul.nav.navbar-nav.navbar-right
-          .dropdown
-            %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"} Check your county
-            / %span.caret
-            %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
-              - Category.all.each do |category|
-                %li= link_to category.name, posts_path(category: category.name)
+        / %ul.nav.navbar-nav.navbar-right
+        /   .dropdown
+        /     %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"} Check your county
+        /     / %span.caret
+        /     %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
+        /       - Category.all.each do |category|
+        /         %li= link_to category.name, posts_path(category: category.name)
             
       - else
         %ul.nav.navbar-nav.navbar-right 
@@ -34,13 +34,13 @@
           %li= link_to "Sign Up", new_user_registration_path, class: 'btn btn-default'
           %li= link_to "About us", about_index_path, class: 'btn btn-default'
           
-        %ul.nav.navbar-nav.navbar-right
-          .dropdown
-            %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"} Check your county
-            / %span.caret
-            %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
-              - Category.all.each do |category|
-                %li= link_to category.name, posts_path(category: category.name)
+        / %ul.nav.navbar-nav.navbar-right
+        /   .dropdown
+        /     %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"} Check your county
+        /     / %span.caret
+        /     %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
+        /       - Category.all.each do |category|
+        /         %li= link_to category.name, posts_path(category: category.name)
   %p= notice
   %p= alert
   .wrapper
