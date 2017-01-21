@@ -81,7 +81,7 @@
 			%li= link_to seat.name, posts_path(seat: seat.name)
 #posts.transitions-enabled.infinite-scroll.clearfix
 	- @posts.each do |post|
-		.box.post
+		.post
 			.post_image{:style => "height: 23rem;"}
 				= link_to (image_tag post.image.url(:small)), post
 			.post_content
@@ -100,5 +100,4 @@
 						%span
 							%i.fa.fa-thumbs-o-down
 							= post.get_dislikes.size
-
 	
