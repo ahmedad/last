@@ -43,39 +43,20 @@ h1, h2, h3, h4, h5, h6 {
 			margin: 0 auto;
 		}
 	}
-	// .panel-body {
-	// 	padding: 35px;
-	// 	h1 {
-	// 		margin: 0 0 10px 0;
-	// 	}
-	// 	.description {
-	// 		color: #868686;
-	// 		line-height: 1.75;
-	// 		margin: 0;
-	// 	}
-	// 	.clearfix:after {
-	// 		clear: both;
-	// 	}
-	// 	.clearfix:before, .clearfix:after {
-	// 		content: " ";
-	// 		display: table;
-	// 	}
-	// 	.button {
-	// 		border: 1px solid #9B9B9B;
-	// 		padding: .7rem 1.25rem;
-	// 		border-radius: .3rem;
-	// 		outline: none;
-	// 		background: white;
-	// 		color: #9B9B9B;
-	// 		font-size: 2rem;
-	// 	    font-weight: 500;
-	// 	}
-	// }
+	
 }
 
 .wrapper {
 	width: 100%;
 	margin: 0 auto;
+	.box {
+		.col-lg-12 {
+			position: relative;
+    		min-height: 1px;
+    		padding-left: 0px;
+    		padding-right: 0;
+		}
+	}
 }
 
 
