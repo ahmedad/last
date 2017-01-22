@@ -20,7 +20,6 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'elastic_email_rails', '~> 0.1.0'
 gem 'listen', '~> 3.0.5'
 gem 'scoped_search', '~> 4.0'
-gem 'google-analytics-rails', '~> 1.1'
 gem 'masonry-rails', '~> 0.2.4'
 
 
