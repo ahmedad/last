@@ -1,49 +1,78 @@
 !!!
 %html
 %head
-  %title Your | Choice
-  = csrf_meta_tags
-  = stylesheet_link_tag    'application', media: 'all'
-  = javascript_include_tag 'application'
-  = analytics_init if GoogleAnalytics.valid_tracker?
-  %link{:rel => "stylesheet", :href => "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"}
-  %link{:rel => "stylesheet", :href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"}
+	%title Your | Choice
+	= csrf_meta_tags
+	= stylesheet_link_tag    'application', media: 'all'
+	= javascript_include_tag 'application'
+	= analytics_init if GoogleAnalytics.valid_tracker?
+	%link{:rel => "stylesheet", :href => "https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"}
+	%link{:rel => "stylesheet", :href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"}
 
 
 %body
-  %nav.navbar.navbar-default
-    .container{:style => "width: 90%;"}
-      .navbar-brand
-        = link_to "Future choice", root_path 
-      - if user_signed_in?
-        %ul.nav.navbar-nav.navbar-right
-          %li= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-default'
-          %li= link_to "About us", about_index_path, class: 'btn btn-default'
-          - if current_user.admin?
-            %li= link_to "New Post", new_post_path, class: 'btn btn-default'
-          
-        / %ul.nav.navbar-nav.navbar-right
-        /   .dropdown
-        /     %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"} Check your county
-        /     / %span.caret
-        /     %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
-        /       - Category.all.each do |category|
-        /         %li= link_to category.name, posts_path(category: category.name)
-            
-      - else
-        %ul.nav.navbar-nav.navbar-right 
-          %li= link_to "Sign In", new_user_session_path, class: 'btn btn-default'
-          %li= link_to "Sign Up", new_user_registration_path, class: 'btn btn-default'
-          %li= link_to "About us", about_index_path, class: 'btn btn-default'
-          
-        / %ul.nav.navbar-nav.navbar-right
-        /   .dropdown
-        /     %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"} Check your county
-        /     / %span.caret
-        /     %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
-        /       - Category.all.each do |category|
-        /         %li= link_to category.name, posts_path(category: category.name)
-  %p= notice
-  %p= alert
-  .wrapper
-    = yield
+	%nav.navbar.navbar-default
+		.container{:style => "width: 90%;"}
+			.navbar-brand
+				= link_to "Future choice", root_path 
+			- if user_signed_in?
+				%ul.nav.navbar-nav.navbar-right
+					%li= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-default'
+					%li= link_to "About us", about_index_path, class: 'btn btn-default'
+					- if current_user.admin?
+						%li= link_to "New Post", new_post_path, class: 'btn btn-default'
+					
+				/ %ul.nav.navbar-nav.navbar-right
+				/   .dropdown
+				/     %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"} Check your county
+				/     / %span.caret
+				/     %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
+				/       - Category.all.each do |category|
+				/         %li= link_to category.name, posts_path(category: category.name)
+						
+			- else
+				%ul.nav.navbar-nav.navbar-right 
+					%li= link_to "Sign In", new_user_session_path, class: 'btn btn-default'
+					%li= link_to "Sign Up", new_user_registration_path, class: 'btn btn-default'
+					%li= link_to "About us", about_index_path, class: 'btn btn-default'
+					
+				/ %ul.nav.navbar-nav.navbar-right
+				/   .dropdown
+				/     %button#dropdownMenu1.btn.btn-default.dropdown-toggle{"aria-expanded" => "true", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"} Check your county
+				/     / %span.caret
+				/     %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
+				/       - Category.all.each do |category|
+				/         %li= link_to category.name, posts_path(category: category.name)
+	%p= notice
+	%p= alert
+	.wrapper
+		= yield
+	%hr 
+	.footer
+		.row
+			.col-sm-4.col-sm-offset-4.text-center
+				%h1 Services To Our Clients
+				%hr
+				%h3.text-center Campaign Websites
+				%h3.text-center Social Media Marketing
+				%hr
+				.row
+					.col-sm-4.text-center
+						.btn-group
+							%button.btn.btn-primary
+								%em.fa.fa-fw.fa-facebook-f
+									Facebook
+					.col-sm-4.text-center
+						.btn-group
+							%button.btn.btn-info
+								%em.fa.fa-fw.fa-twitter-f
+									Twitter
+					.col-sm-4.text-center
+						.btn-group
+							%button.btn.btn-warning
+								%em.fa.fa-fw.fa-instagram-f
+									Instagram
+				%hr
+				
+
+	
