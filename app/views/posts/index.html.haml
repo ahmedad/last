@@ -13,7 +13,7 @@
 						.container
 							.carousel-caption
 								%h1{:style => "color: green;"}
-									YOUR CHOICE YOUR FUTURE.
+									YOUR CHOICE, YOUR FUTURE.
 								%h2{:style => "padding-left: 2rem;"}
 									You can read, comment, upvote or downvote and share your favorite candidate's profile on socail media.
 								= link_to "Sign Up Today", new_user_registration_path, class: 'btn btn-primary'
@@ -79,25 +79,47 @@
 	%ul.nav.navbar-nav
 		- Seat.all.each do |seat|
 			%li= link_to seat.name, posts_path(seat: seat.name)
-#posts.transitions-enabled
-	- @posts.each do |post|
-		.box.post
-			.post_image
-				= link_to (image_tag post.image.url(:small)), post
-			.post_content
-				.title
-					%h2= post.name
-				.data.clearfix
-					%p.username
-						= post.position
-					%p.buttons
-						%span
-							%i.fa.fa-comments-o
-							= post.comments.count
-						%span
-							%i.fa.fa-thumbs-o-up
-							= post.get_likes.size
-						%span
-							%i.fa.fa-thumbs-o-down
-							= post.get_dislikes.size
-	
+.row
+	.col-sm-9
+		#posts.transitions-enabled
+			- @posts.each do |post|
+				.box.post
+					.post_image
+						= link_to (image_tag post.image.url(:small)), post
+					.post_content
+						.title
+							%h2= post.name
+						.data.clearfix
+							%p.username
+								= post.position
+							%p.buttons
+								%span
+									%i.fa.fa-comments-o
+									= post.comments.count
+								%span
+									%i.fa.fa-thumbs-o-up
+									= post.get_likes.size
+								%span
+									%i.fa.fa-thumbs-o-down
+									= post.get_dislikes.size
+	.col-sm-3
+		%h1 Our Services
+		%hr
+		%h3 Campaign Websites
+		%h3 Social Media Marketing
+		%hr
+		.row
+			.col-sm-4
+				.btn-group
+					%button.btn.btn-primary
+						%em.fa.fa-fw.fa-facebook-f
+			.col-sm-4
+				.btn-group
+					%button.btn.btn-info
+						%em.fa.fa-fw.fa-twitter
+			.col-sm-4
+				.btn-group
+					%button.btn.btn-warning
+						%em.fa.fa-fw.fa-instagram
+		%hr
+			
