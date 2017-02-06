@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { confirmations: 'confirmations' }
   resources :about
+  resources :contacts
   get 'about' => 'about#index'
   get '/search' => 'posts#search', as: 'search_posts'
   resources :posts do

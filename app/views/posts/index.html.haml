@@ -79,49 +79,50 @@
 	%ul.nav.navbar-nav
 		- Seat.all.each do |seat|
 			%li= link_to seat.name, posts_path(seat: seat.name)
+#posts.transitions-enabled
+	- @posts.each do |post|
+		.box.post
+			.post_image
+				= link_to (image_tag post.image.url(:small)), post
+			.post_content
+				.title
+					%h2= post.name
+				.data.clearfix
+					%p.username
+						= post.position
+					%p.buttons
+						%span
+							%i.fa.fa-comments-o
+							= post.comments.count
+						%span
+							%i.fa.fa-thumbs-o-up
+							= post.get_likes.size
+						%span
+							%i.fa.fa-thumbs-o-down
+							= post.get_dislikes.size
+%hr
 .row
-	.col-sm-9
-		#posts.transitions-enabled
-			- @posts.each do |post|
-				.box.post
-					.post_image
-						= link_to (image_tag post.image.url(:small)), post
-					.post_content
-						.title
-							%h2= post.name
-						.data.clearfix
-							%p.username
-								= post.position
-							%p.buttons
-								%span
-									%i.fa.fa-comments-o
-									= post.comments.count
-								%span
-									%i.fa.fa-thumbs-o-up
-									= post.get_likes.size
-								%span
-									%i.fa.fa-thumbs-o-down
-									= post.get_dislikes.size
-	.col-sm-3
+	.col-sm-4.col-sm-offset-4.text-center
 		%h1 Our Services
 		%hr
-		%h3 Campaign Websites
-		%h3 Campaign video ads
-		%h3 Social Media Marketing
+		
+		%h3.text-center Campaign Websites
+		%h3.text-center Campaign video ads
+		%h3.text-center Social Media Marketing
 
 		%hr
 		.row
 			.col-sm-4
 				.btn-group
-					%button.btn.btn-primary
+					%button.btn.btn-primary.text-center
 						%em.fa.fa-fw.fa-facebook-f
 			.col-sm-4
 				.btn-group
-					%button.btn.btn-info
+					%button.btn.btn-info.text-center
 						%em.fa.fa-fw.fa-twitter
 			.col-sm-4
 				.btn-group
-					%button.btn.btn-warning
+					%button.btn.btn-warning.text-center
 						%em.fa.fa-fw.fa-instagram
 		%hr
 			
